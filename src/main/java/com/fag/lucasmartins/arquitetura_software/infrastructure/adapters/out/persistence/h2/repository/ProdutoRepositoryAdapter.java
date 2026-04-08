@@ -7,6 +7,8 @@ import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.out.per
 import com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.out.persistence.h2.mapper.ProdutoMapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public class ProdutoRepositoryAdapter implements ProdutoRepositoryPort {
 
@@ -23,5 +25,15 @@ public class ProdutoRepositoryAdapter implements ProdutoRepositoryPort {
         produtoJpaRepository.save(produtoEntity);
 
         return ProdutoMapper.toBO(produtoEntity);
+    }
+
+    @Override
+    public boolean existePorId(Integer id) {
+        return produtoJpaRepository.existsById(id);
+    }
+
+    @Override
+    public Optional<String> obterNomePorId(Integer id) {
+        return produtoJpaRepository.findById(id).map(ProdutoEntity::getNome);
     }
 }
