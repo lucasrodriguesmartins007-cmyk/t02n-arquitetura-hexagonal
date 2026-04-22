@@ -2,9 +2,9 @@ name: CI Build And Test
 
 on:
   push:
-    branches: ["feature/hexagonal"]
+    branches: ["master", "feature/hexagonal"]
   pull_request:
-    branches: ["feature/hexagonal"]
+    branches: ["master", "feature/hexagonal"]
   workflow_dispatch:
 
 concurrency:

@@ -40,8 +40,8 @@ public class PedidoService implements PedidoServicePort {
         pedidoBO.setPessoa(pessoaBO);
         verificarProdutos(pedidoBO);
 
-        pedidoBO.validarCep();
         pedidoBO.normalizarCep();
+        pedidoBO.validarCep();
         pedidoBO.calcularValorTotal();
 
         return pedidoRepositoryPort.salvar(pedidoBO);
