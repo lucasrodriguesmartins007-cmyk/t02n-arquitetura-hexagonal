@@ -1,4 +1,4 @@
-# Arquitetura Hexagonal (Ports & Adapters)
+# Arquitetura Hexagonal
 
 Este projeto demonstra a refatoração de um serviço simples de e-commerce (iniciado em MVC) para o modelo de Arquitetura Hexagonal (Ports and Adapters), protegendo as regras de negócio no núcleo do sistema (Domínio) e isolando integrações externas por meio de adaptadores.
 
